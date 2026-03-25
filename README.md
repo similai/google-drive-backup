@@ -32,3 +32,19 @@ Following command line options are available.
 **--logfile** - Path to the file to which the logs should be written to. By default, writes to `drive.log` in the current directory. The file will be overwritten every time the script is run.
 
 **--drive_id** ID of the folder which you want to download. By default, entire "My Drive" is downloaded.
+
+---
+
+## Prototype: 羅東國中合作社雲端進銷存（開發起始）
+
+本次新增 `coop_cloud_inventory.py` 作為第一期後端核心原型，重點功能如下：
+- 商品主檔（條碼/價格/庫存/安全庫存）
+- 進貨入庫 `stock_in`
+- 掃碼銷售 `sale_by_scan`
+- 低庫存查詢 `low_stock_products`
+- 重複掃描節流（避免掃描槍連發誤扣庫）
+
+### 執行測試
+```bash
+python -m unittest tests/test_coop_cloud_inventory.py
+```
